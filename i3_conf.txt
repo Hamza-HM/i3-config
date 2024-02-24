@@ -1,0 +1,11 @@
+#check this repo for i3lock-fancy works like a charm
+https://github.com/meskarune/i3lock-fancy?tab=readme-ov-file
+
+#install rofi and configure the search bar
+sudo apt instlal rofi
+
+#install compton
+sudo apt install compton
+
+#and paste in i3 config the -f is for the fade effect you need to restard i3 
+exec compton -f
