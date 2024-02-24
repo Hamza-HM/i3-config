@@ -27,8 +27,9 @@ font xft:Source Code Variable 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
-# kill focused window
+#bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
+#kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
