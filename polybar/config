@@ -40,10 +40,10 @@ secondary = #e60053
 alert = #bd2c40
 
 
-[bar/bar2]
-;monitor = HDMI-A-1-0
+[bar/bar3]
+monitor = DP-2
 width = 100%
-height = 27
+height = 70
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -52,7 +52,41 @@ fxed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 8
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+
+modules-left = bspwm i3
+modules-center = mpd
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+
+
+
+[bar/bar2]
+monitor = eDP-1
+width = 100%
+height = 70
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fxed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 8
 line-color = #f00
 
 border-size = 4
@@ -74,9 +108,9 @@ modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan 
 
 
 [bar/bar1]
-;monitor = DisplayPort-3
+monitor = DP-1
 width = 100%
-height = 27
+height = 70
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -87,7 +121,7 @@ fxed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 8
 line-color = #f00
 
 border-size = 4
