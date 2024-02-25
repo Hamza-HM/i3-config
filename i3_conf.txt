@@ -9,3 +9,6 @@ sudo apt install compton
 
 #and paste in i3 config the -f is for the fade effect you need to restard i3 
 exec compton -f
+
+#install i3blocks 
+sudo apt install i3blocks
