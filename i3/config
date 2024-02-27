@@ -27,10 +27,10 @@ font xft:Source Code Variable 14
 floating_modifier $mod
 
 # start a terminal
+# kill focused window
 #bindsym $mod+Return exec konsole
 bindsym $mod+Return exec kitty
-#kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+a kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
@@ -169,9 +169,9 @@ bindsym $mod+Ctrl+Left workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 #setting up multi monitors
-set $fm HDMI-A-1-0
-set $sm DisplayPort-3
-set $tm DisplayPort-1
+set $fm DisplayPort-1-2
+set $sm HDMI-A-2-1
+set $tm DisplayPort-3
 #set up where each workspace resides in which monitor
 workspace 1 output $fm
 workspace 2 output $fm
@@ -181,8 +181,8 @@ workspace 5 output $sm
 workspace 6 output $sm
 workspace 7 output $sm
 workspace 8 output $sm
-workspace 9 output $sm
-workspace 10 output $sm
+workspace 9 output $tm
+workspace 10 output $tm
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
@@ -311,7 +311,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id manjaro-hello
 # start network manager and the nm-applet
 exec --no-startup-id nm-applet
@@ -488,4 +488,24 @@ exec --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpapers/*
 # call feh with the window size of 1280x720
 bindsym $mod+b exec feh -g 1280x720 ~/Pictures/Wallpapers
 exec_always xrandr --output DVI-D-1 --off --output DisplayPort-3 --mode 1366x768 --pos 0x156 --rotate normal --output DisplayPort-1-0 --off --output DisplayPort-1-1 --off --output DisplayPort-1-2 --mode 1920x1080 --pos 1366x0 --rotate normal --output HDMI-A-1-0 --mode 1920x1080 --pos 3286x0 --rotate normal --output DVI-D-1-0 --off
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#compton setup
+exec --no-startup-id compton --config ~/.config/i3/compton/compton.conf
