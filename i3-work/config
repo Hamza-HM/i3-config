@@ -28,7 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec konsole
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec gnome-terminal
 #kill focused window
 bindsym $mod+Shift+a kill
 
@@ -209,16 +209,16 @@ bindsym $mod+mod2+KP_9 workspace number $ws9
 bindsym $mod+mod2+KP_0 workspace number $ws10
 
 # Move focused container to workspace
-bindsym mod5+mod2+KP_1 move container to workspace number $ws1
-bindsym mod5+mod2+KP_2 move container to workspace number $ws2
-bindsym mod5+mod2+KP_3 move container to workspace number $ws3
-bindsym mod5+mod2+KP_4 move container to workspace number $ws4
-bindsym mod5+mod2+KP_5 move container to workspace number $ws5
-bindsym mod5+mod2+KP_6 move container to workspace number $ws6
-bindsym mod5+mod2+KP_7 move container to workspace number $ws7
-bindsym mod5+mod2+KP_8 move container to workspace number $ws8
-bindsym mod5+mod2+KP_9 move container to workspace number $ws9
-bindsym mod5+mod2+KP_0 move container to workspace number $ws10
+bindsym mod1+mod2+KP_1 move container to workspace number $ws1
+bindsym mod1+mod2+KP_2 move container to workspace number $ws2
+bindsym mod1+mod2+KP_3 move container to workspace number $ws3
+bindsym mod1+mod2+KP_4 move container to workspace number $ws4
+bindsym mod1+mod2+KP_5 move container to workspace number $ws5
+bindsym mod1+mod2+KP_6 move container to workspace number $ws6
+bindsym mod1+mod2+KP_7 move container to workspace number $ws7
+bindsym mod1+mod2+KP_8 move container to workspace number $ws8
+bindsym mod1+mod2+KP_9 move container to workspace number $ws9
+bindsym mod1+mod2+KP_0 move container to workspace number $ws10
 #default software to run on log in
 assign [class="Google-chrome"] workspace number $ws5
 # Open applications on specific workspaces
@@ -310,7 +310,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id manjaro-hello
 # start network manager and the nm-applet
 exec --no-startup-id nm-applet
